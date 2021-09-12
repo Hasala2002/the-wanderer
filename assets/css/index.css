@@ -305,6 +305,13 @@ a.hero-explore .arrow{
     font-size: 3rem;
 }
 
+.article-tag{
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+    color: rgb(17, 17, 126) !important;
+}
+
 .blog .news-card{
     width: 90%;
     flex:1;

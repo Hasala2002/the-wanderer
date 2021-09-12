@@ -39,6 +39,47 @@ body{
     color: #fff;
 }
 
+.back-to-home-btn{
+    position: fixed;
+    width: fit-content;
+    height: 50px;
+    padding: 0 1rem; 
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #000;
+    border: 3.5px solid transparent;
+    z-index: 10;
+    top: 50px;
+    left: 50px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 2px 8px;
+    cursor: pointer;
+    transition: .2s ease;
+    text-decoration: none;
+}
+
+.back-to-home-btn ion-icon, .back-to-home-btn span{
+    color: #fff;
+    font-size: .9rem;
+    text-decoration: none;
+}
+
+.back-to-home-btn span{
+    margin-left: .5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.back-to-home-btn:hover{
+    border: 3.5px solid #000;
+    background-color: transparent;
+}
+
+.back-to-home-btn:hover .back-to-home-asset{
+    color: #000;
+    font-weight: 500;
+}
+
 .scroll-btn-hide{
     opacity: 0;
     transform: scale(0.75);

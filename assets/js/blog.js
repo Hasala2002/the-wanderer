@@ -1,31 +1,26 @@
-$(function() {
-    if($(window).scrollTop()>30){
-        $('.scroll-to-top-btn').removeClass('scroll-btn-hide')
-    }else{
-        $('.scroll-to-top-btn').addClass('scroll-btn-hide') 
-    }
+let commentTextArea = document.querySelector(".blog-textarea textarea")
+let commentBtn = document.querySelector(".blog-textarea button")
+
+let scrollToTopBtn = document.querySelector(".scroll-to-top-btn");
+
+commentTextArea.addEventListener('focusin',function() {
+    commentBtn.style.opacity = 1
 })
 
-$('.blog-textarea textarea').focusin(()=>{
-    $('.blog-textarea button').css({
-        "opacity":"1"
-    })
-});
-
-$('.blog-textarea textarea').focusout(()=>{
-    $('.blog-textarea button').css({
-        "opacity":"0"
-    })
-});
-
-$('.scroll-to-top-btn').click(()=>{
-    $(window).scrollTop(0);
+commentTextArea.addEventListener('focusout',function() {
+    commentBtn.style.opacity = 0
 })
 
-$(window).scroll(()=>{
-    if($(window).scrollTop()>30){
-        $('.scroll-to-top-btn').removeClass('scroll-btn-hide')
-    }else{
-        $('.scroll-to-top-btn').addClass('scroll-btn-hide') 
-    }
+scrollToTopBtn.addEventListener('click',function(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 })
+
+window.onscroll = function(){
+    console.log(document.documentElement.scrollTop)
+    if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        scrollToTopBtn.classList.remove('scroll-btn-hide')
+      } else {
+        scrollToTopBtn.classList.add('scroll-btn-hide')
+      }
+}

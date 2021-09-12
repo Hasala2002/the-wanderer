@@ -1,4 +1,7 @@
-$('.likes-comments div:nth-child(1) ion-icon').click(()=>{
-    $('.likes-comments div:nth-child(1) ion-icon').toggleClass('liked')
-    $('.likes-comments div:nth-child(1) span').text('97')
+let likeIcon = document.querySelector('.like-icon')
+let likeCount = document.querySelector('.like-count')
+
+likeIcon.addEventListener('click',function(){
+    likeIcon.classList.add('liked')
+    likeCount.textContent = '97'
 })
