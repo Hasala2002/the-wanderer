@@ -7,11 +7,39 @@
     <link rel="shortcut icon" href="./assets/img/logo/favicon_32.ico" type="image/x-icon">
     <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule="" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.js"></script>
-    <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
+    <script src='https://code.jquery.com/jquery-3.6.0.min.js' integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' crossorigin='anonymous'></script>
     <script defer src="./assets/js/index.js"></script>
     <title>The Wanderer</title>
 </head>
 <body>
+    <div class="notification">
+        <div class="not-content">
+            <ion-icon name="checkmark-done-outline"></ion-icon>
+            <span>Bookmark Saved Succesfully!</span>
+        </div>
+        <div class="not-bar"></div>
+    </div>
+    <div class="wrapper">
+        <div class="snack-bar">
+            <button class="close-snack">
+                <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <div class="text-block">
+                <h1 id="snackTitle">Kandy, Sri Lanka</h1>
+                <p id="snackDesc">
+                    Kandy is a large city in central Sri Lanka. It's set on a plateau surrounded by mountains, which are home to tea plantations and biodiverse rainforest. The city's heart is scenic Kandy Lake (Bogambara Lake), which is popular for strolling. Kandy is famed for sacred Buddhist sites, including the Temple of the Tooth (Sri Dalada Maligawa) shrine, celebrated with the grand Esala Perahera annual procession. 
+                </p>
+                <p><b>― cited from Google</b></p>
+                <a id="snackLink" class="go-to-wiki" href="#">
+                    <ion-icon class="go-to-wiki-asset" name="earth"></ion-icon>
+                    <span class="go-to-wiki-asset">go to wikipedia</span>
+                </a>
+            </div>
+            <div class="img-block">
+                <img id="snackImg" src="./assets/img/gallery/new_Compressed_gallery-photos__1.jpg" alt="">
+            </div>
+        </div>
+    </div>
     <nav>
         <a href="#hero">
             <ion-icon name="home-outline"></ion-icon>
@@ -42,7 +70,7 @@
     </div>
     <div class="sections">
         <div class="pic">
-            <img src="./assets/img/hero/Compressed_hero-card_1.jpg" alt="">
+            <img src="./assets/img/hero/new_Compressed_hero-card_1.jpg" alt="">
             <div class="info-panel">
                 <div class="info-sec__1">
                     <ion-icon name="location-outline"></ion-icon>
@@ -51,7 +79,7 @@
             </div>
         </div>
         <div class="pic">
-            <img src="./assets/img/hero/Compressed_hero-card_3.jpg" alt="">
+            <img src="./assets/img/hero/new_Compressed_hero-card_3.jpg" alt="">
             <div class="info-panel">
                 <div class="info-sec__1">
                     <ion-icon name="location-outline"></ion-icon>
@@ -60,7 +88,7 @@
             </div>
         </div>
         <div class="pic">
-            <img src="./assets/img/hero/Compressed_hero-card_2.jpg" alt="">
+            <img src="./assets/img/hero/new_Compressed_hero-card_2.jpg" alt="">
             <div class="info-panel">
                 <div class="info-sec__1">
                     <ion-icon name="location-outline"></ion-icon>
@@ -69,7 +97,7 @@
             </div>
         </div>
         <div class="pic">
-            <img src="./assets/img/hero/Compressed_hero-card_4.jpg" alt="">
+            <img src="./assets/img/hero/new_Compressed_hero-card_4.jpg" alt="">
             <div class="info-panel">
                 <div class="info-sec__1">
                     <ion-icon name="location-outline"></ion-icon>
@@ -116,7 +144,7 @@
             <div class="journal-entries">
                 <h3>Top Reads</h3>
                 <div class="journal-entry__card">
-                    <div class="entry-index" style="background-image: url('/assets/img/blog/Compressed_blog-img_1.jpg');">
+                    <div class="entry-index" style="background-image: url('/assets/img/blog/new_Compressed_blog-img_1.jpg');">
                         <h1>#26</h1>
                     </div>
                     <div class="entry-titles">
@@ -133,7 +161,7 @@
                     </div>
                 </div>
                 <div class="journal-entry__card">
-                    <div class="entry-index" style="background-image: url('/assets/img/blog/Compressed_blog-img_2.jpg');">
+                    <div class="entry-index" style="background-image: url('/assets/img/blog/new_Compressed_blog-img_2.jpg');">
                         <h1>#10</h1>
                     </div>
                     <div class="entry-titles">
@@ -149,7 +177,7 @@
                     </div>
                 </div>
                 <div class="journal-entry__card">
-                    <div class="entry-index" style="background-image: url('/assets/img/blog/Compressed_blog-img_3.jpg');">
+                    <div class="entry-index" style="background-image: url('/assets/img/blog/new_Compressed_blog-img_3.jpg');">
                         <h1>#03</h1>
                     </div>
                     <div class="entry-titles">
@@ -165,7 +193,7 @@
                     </div>
                 </div>
                 <div class="journal-entry__card">
-                    <div class="entry-index" style="background-image: url('/assets/img/blog/Compressed_blog-img_4.jpg');">
+                    <div class="entry-index" style="background-image: url('/assets/img/blog/new_Compressed_blog-img_4.jpg');">
                         <h1>#100</h1>
                     </div>
                     <div class="entry-titles">
@@ -190,7 +218,8 @@
         <div class="gallery-container">
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__1.jpg" alt="">
+                    <a data-id="0">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__1.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Kandy, Sri Lanka</span>
@@ -198,7 +227,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__2.jpg" alt="">
+                    <a data-id="1">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__2.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Marga, Indonesia</span>
@@ -206,7 +236,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__3.jpg" alt="">
+                    <a data-id="2">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__3.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Interlaken, Switzerland</span>
@@ -214,7 +245,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__4.jpg" alt="">
+                    <a data-id="3">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__4.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Vik, Iceland</span>
@@ -222,7 +254,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__5.jpg" alt="">
+                    <a data-id="4">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__5.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Stockholm, Sweden</span>
@@ -230,7 +263,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__6.jpg" alt="">
+                    <a data-id="5">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__6.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Ouarzazate, Morocco</span>
@@ -238,7 +272,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__7.jpg" alt="">
+                    <a data-id="6">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__7.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Lake Baikal, Russia</span>
@@ -246,7 +281,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__8.jpg" alt="">
+                    <a data-id="7">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__8.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Lambari, Brazil</span>
@@ -254,7 +290,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__9.jpg" alt="">
+                    <a data-id="8">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__9.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Kigali, Rwanda</span>
@@ -262,7 +299,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__10.jpg" alt="">
+                    <a data-id="9">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__10.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Honolulu, US</span>
@@ -270,7 +308,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__11.jpg" alt="">
+                    <a data-id="10">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__11.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Hobbiton, New Zealand</span>
@@ -278,7 +317,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__12.jpg" alt="">
+                    <a data-id="11">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__12.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Taito City, Japan</span>
@@ -286,7 +326,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__13.jpg" alt="">
+                    <a data-id="12">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__13.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Wulong, China</span>
@@ -294,7 +335,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__14.jpg" alt="">
+                    <a data-id="13">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__14.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Lisbon, Portugal</span>
@@ -302,7 +344,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__15.jpg" alt="">
+                    <a data-id="14">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__15.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Machu Picchu, Peru</span>
@@ -310,7 +353,8 @@
             </div>
             <div class="photo-box">
                 <div class="photo">
-                    <img src="./assets/img/gallery/Compressed_gallery-photos__16.jpg" alt="">
+                    <a data-id="15">read more</a>
+                    <img src="./assets/img/gallery/new_Compressed_gallery-photos__16.jpg" alt="">
                 </div>
                 <div class="photo-title">
                     <span>Fuvahmulah, Maldives</span>
