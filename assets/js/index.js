@@ -41,7 +41,7 @@ const citations = [
     },
     {
         title: 'Kigali, Rwanda',
-        description: `Kigali is the capital city of Rwanda, roughly in the center of the country. It sprawls across numerous hills, ridges and valleys, and has a vibrant restaurant and nightlife scene. The Kigali Genocide Memorial documents the 1994 mass killings in Rwanda, associated with the country’s civil war. The city’s Caplaki Crafts Village has stalls selling traditional handicrafts, including woodcarvings and woven baskets.`,
+        description: `Kigali is the capital city of Rwanda, roughly in the center of the country. It sprawls across numerous hills, ridges and valleys, and has a vibrant restaurant and nightlife scene. The Kigali Genocide Memorial documents the 1994 occurences in Rwanda, associated with the country’s civil war. The city’s Caplaki Crafts Village has stalls selling traditional handicrafts, including woodcarvings and woven baskets.`,
         link: 'https://en.wikipedia.org/wiki/Kigali'
     },
     {
@@ -81,73 +81,76 @@ const citations = [
     },
 ];
 
-var cursor = $('#cursor');
-var cursorPointer = $('#cursor_pointer');
+const likeIcon = document.querySelector('.like-icon')
+const likeCount = document.querySelector('.like-count')
 
-let likeIcon = document.querySelector('.like-icon')
-let likeCount = document.querySelector('.like-count')
+const wrapper = document.querySelector('.wrapper')
+const snackBar = document.querySelector('.snack-bar')
+const snackClose = document.querySelector('.close-snack')
+const bookmarks = document.querySelectorAll('.bookmark')
+const notification = document.querySelector('.notification')
+const notBar = document.querySelector('.not-bar')
+
+const snackTitle = document.getElementById('snackTitle')
+const snackDesc = document.getElementById('snackDesc')
+const snackImg = document.getElementById('snackImg')
+const snackLink = document.getElementById('snackLink')
+
+const snackBtns = document.querySelectorAll('.photo > a')
+
+snackBtns.forEach(snackBtn => {
+    snackBtn.addEventListener('click',(e)=>{
+        let snackId = parseInt(e.target.dataset.id)
+        snackTitle.textContent = citations[snackId].title
+            snackDesc.textContent = citations[snackId].description
+            snackImg.setAttribute('src',`./assets/img/gallery/new_Compressed_gallery-photos__${snackId+1}.jpg`)
+            snackLink.setAttribute('href',citations[snackId].link)
+            wrapper.classList.add('expand-width')
+            setTimeout(()=>{
+                wrapper.classList.add('expand-height')
+            },250)
+            setTimeout(()=>{
+                snackBar.classList.add('center-snack')
+            },500)
+    })
+})
 
 likeIcon.addEventListener('click',function(){
     likeIcon.classList.add('liked')
     likeCount.textContent = '97'
 })
 
-$('.wrapper').hide()
-
-$('.photo > a').click(function(){
-    let snackId = $(this).data('id')
-    $('#snackTitle').text(citations[snackId].title)
-    $('#snackDesc').text(citations[snackId].description)
-    $('#snackImg').attr('src',`./assets/img/gallery/new_Compressed_gallery-photos__${snackId+1}.jpg`)
-    $('#snackLink').attr('href',citations[snackId].link)
-    $('.wrapper').show()
-    $('.wrapper').addClass('expand-width')
+snackClose.addEventListener('click',()=>{
+    snackBar.classList.remove('center-snack')
     setTimeout(()=>{
-        $('.wrapper').addClass('expand-height')
-    },250)
-    setTimeout(()=>{
-        $('.snack-bar').addClass('center-snack')
-    },500)
-})
-
-$('.close-snack').click(()=>{
-    $('.snack-bar').removeClass('center-snack')
-    setTimeout(()=>{
-        $('.wrapper').removeClass('expand-height')
+        wrapper.classList.remove('expand-height')
     },500)
     setTimeout(()=>{
-        $('.wrapper').removeClass('expand-width')
+        wrapper.classList.remove('expand-width')
     },750)
-    setTimeout(()=>{
-        $('.wrapper').hide()
-    },1000)
 })
 
-$('.wrapper').click(()=>{
-    $('.snack-bar').removeClass('center-snack')
+wrapper.addEventListener('click', ()=>{
+    snackBar.classList.remove('center-snack')
     setTimeout(()=>{
-        $('.wrapper').removeClass('expand-height')
+        wrapper.classList.remove('expand-height')
     },500)
     setTimeout(()=>{
-        $('.wrapper').removeClass('expand-width')
+        wrapper.classList.remove('expand-width')
     },750)
-    setTimeout(()=>{
-        $('.wrapper').hide()
-    },1000)
 })
 
-
-$('.bookmark').click(()=>{
-    $('.notification').css({
-        opacity: 1
+bookmarks.forEach(bookmark => {
+    bookmark.addEventListener('click',()=>{
+        notification.style.opacity = 1;
+        setTimeout(()=>{
+            notBar.classList.add('not-loaded')
+        },250)
+        setTimeout(()=>{
+            notification.style.opacity = 0
+        },1250)
+        setTimeout(()=>{
+            notBar.classList.remove('not-loaded')
+        },1500)
     })
-    $('.not-bar').addClass('not-loaded')
-    setTimeout(()=>{
-        $('.notification').css({
-            opacity: 0
-        })
-    },1250)
-    setTimeout(()=>{
-        $('.not-bar').removeClass('not-loaded')
-    },1500)
 })
